@@ -5,3 +5,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps: [uses: fastai/workflows/nbdev-ci@master]
+
+env:
+    KAGGLE_USERNAME: ${{ secrets.KaggleUsername }}
+    KAGGLE_KEY: ${{ secrets.KaggleKey }}
