@@ -68,7 +68,7 @@ def file_extract(fname, # The path of the archive file
 
 # %% ../nbs/00_core.ipynb 8
 # Import the API module from the kaggle package
-from kaggle import api
+# from kaggle import api
 
 # %% ../nbs/00_core.ipynb 9
 def dl_kaggle(kaggle_dataset, # The Kaggle dataset id in the format `'<username>/<dataset_name>'`.
@@ -78,6 +78,9 @@ def dl_kaggle(kaggle_dataset, # The Kaggle dataset id in the format `'<username>
     """
     Download the Kaggle dataset and extract it to the specified directory. 
     """
+    
+    # Import the API module from the kaggle package
+    from kaggle import api
     
     # If the dataset does not exist in the specified directory, download and extract it.
     if not dataset_path.exists():
