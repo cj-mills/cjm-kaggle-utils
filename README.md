@@ -49,7 +49,7 @@ print(f"Archive Directory: {archive_dir}")
 
 ``` python
 # Set the name of the dataset
-dataset_name = 'yolox-openvino-inference-demo-files'
+dataset_name = 'style-image-samples'
 
 # Construct the Kaggle dataset name by combining the username and dataset name
 kaggle_dataset = f'innominate817/{dataset_name}'
@@ -65,11 +65,19 @@ dataset_path = Path(f'{dataset_dir}/{dataset_name}')
 print(f"Dataset Path: {dataset_path}")
 ```
 
-    Archive Path: Datasets/../Archive/yolox-openvino-inference-demo-files.zip
-    Dataset Path: Datasets/yolox-openvino-inference-demo-files
+    Archive Path: Datasets/../Archive/style-image-samples.zip
+    Dataset Path: Datasets/style-image-samples
 
 ``` python
 dl_kaggle(kaggle_dataset, archive_path, dataset_path)
 ```
 
-    Dataset already downloaded
+    Downloading style-image-samples.zip to Datasets/../Archive
+
+    100%|██████████████████████████████████████| 27.5M/27.5M [00:00<00:00, 56.0MB/s]
+
+``` python
+!ls {dataset_path}
+```
+
+    images

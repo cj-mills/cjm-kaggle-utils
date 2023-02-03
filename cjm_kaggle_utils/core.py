@@ -86,7 +86,7 @@ def dl_kaggle(kaggle_dataset, # The Kaggle dataset id in the format `'<username>
     if not dataset_path.exists():
         api.dataset_download_cli(kaggle_dataset, path=archive_path.parent)
 
-        file_extract(fname=archive_path, dest=dataset_path)
+        file_extract(fname=archive_path, dest=dataset_path.parent)
 
         # Delete the archive if specified
         if delete_archive: archive_path.unlink()
