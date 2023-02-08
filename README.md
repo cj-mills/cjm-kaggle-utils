@@ -74,7 +74,7 @@ dl_kaggle(kaggle_dataset, archive_path, dataset_path)
 
     Downloading style-image-samples.zip to Datasets/../Archive
 
-    100%|██████████████████████████████████████| 27.5M/27.5M [00:00<00:00, 56.0MB/s]
+    100%|██████████████████████████████████████████████████████████████████████████████████████████████| 16.2M/16.2M [00:00<00:00, 44.0MB/s]
 
 ``` python
 !ls {dataset_path}
