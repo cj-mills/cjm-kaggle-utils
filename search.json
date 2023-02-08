@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nsave_kaggle_creds\n\n save_kaggle_creds (username:str, key:str, overwrite=False)\n\nSave the Kaggle API credentials.\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nusername\nstr\n\nThe Kaggle API username.\n\n\nkey\nstr\n\nThe Kaggle API key.\n\n\noverwrite\nbool\nFalse\nOverwrite existing credentials.\n\n\n\n\nusername = \"name\"\nkey = \"12345\"\nsave_kaggle_creds(username, key, overwrite=False)\n\nCredentials already present. Set `overwrite=True` to replace them.\n\n\n\nsource\n\n\ndl_kaggle\n\n dl_kaggle (kaggle_dataset, archive_path, dataset_path,\n            delete_archive=True)\n\nDownload the Kaggle dataset and extract it to the specified directory.\n\n\n\n\n\n\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nkaggle_dataset\n\n\nThe Kaggle dataset id in the format '<username>/<dataset_name>'.\n\n\narchive_path\n\n\nThe path to save the archive file.\n\n\ndataset_path\n\n\nThe path to save the extracted dataset.\n\n\ndelete_archive\nbool\nTrue\nDelete the archive after extraction.\n\n\n\n\n# Get the path to the directory where datasets are stored\ndataset_dir = Path(\"./Datasets/\")\ndataset_dir.mkdir(parents=True, exist_ok=True)\nprint(f\"Dataset Directory: {dataset_dir}\")\n\n# Create the path to the data directory\narchive_dir = dataset_dir/'../Archive'\narchive_dir.mkdir(parents=True, exist_ok=True)\nprint(f\"Archive Directory: {archive_dir}\")\n\nDataset Directory: Datasets\nArchive Directory: Datasets/../Archive\n\n\n\n# Set the name of the dataset\ndataset_name = 'style-image-samples'\n\n# Construct the Kaggle dataset name by combining the username and dataset name\nkaggle_dataset = f'innominate817/{dataset_name}'\n\n\n# Create the path to the zip file that contains the dataset\narchive_path = Path(f'{archive_dir}/{dataset_name}.zip')\nprint(f\"Archive Path: {archive_path}\")\n\n# Create the path to the directory where the dataset will be extracted\ndataset_path = Path(f'{dataset_dir}/{dataset_name}')\nprint(f\"Dataset Path: {dataset_path}\")\n\nArchive Path: Datasets/../Archive/style-image-samples.zip\nDataset Path: Datasets/style-image-samples\n\n\n\ndl_kaggle(kaggle_dataset, archive_path, dataset_path)\n\nDownloading style-image-samples.zip to Datasets/../Archive\n\n\n100%|██████████████████████████████████████████████████████████████████████████████████████████████| 16.2M/16.2M [00:00<00:00, 50.8MB/s]\n\n\n\n\n\n\n!ls {dataset_path}\n\nimages"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "cjm-kaggle-utils",
+    "section": "",
+    "text": "pip install cjm_kaggle_utils"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "cjm-kaggle-utils",
+    "section": "How to use",
+    "text": "How to use\n\nsave_kaggle_creds\n\nfrom cjm_kaggle_utils.core import save_kaggle_creds\n\n\nusername = \"name\"\nkey = \"12345\"\nsave_kaggle_creds(username, key, overwrite=False)\n\nCredentials already present. Set `overwrite=True` to replace them.\n\n\n\n\ndl_kaggle\n\nfrom cjm_kaggle_utils.core import dl_kaggle\nfrom pathlib import Path\n\n\n# Get the path to the directory where datasets are stored\ndataset_dir = Path(\"./Datasets/\")\ndataset_dir.mkdir(parents=True, exist_ok=True)\nprint(f\"Dataset Directory: {dataset_dir}\")\n\n# Create the path to the data directory\narchive_dir = dataset_dir/'../Archive'\narchive_dir.mkdir(parents=True, exist_ok=True)\nprint(f\"Archive Directory: {archive_dir}\")\n\nDataset Directory: Datasets\nArchive Directory: Datasets/../Archive\n\n\n\n# Set the name of the dataset\ndataset_name = 'style-image-samples'\n\n# Construct the Kaggle dataset name by combining the username and dataset name\nkaggle_dataset = f'innominate817/{dataset_name}'\n\n\n# Create the path to the zip file that contains the dataset\narchive_path = Path(f'{archive_dir}/{dataset_name}.zip')\nprint(f\"Archive Path: {archive_path}\")\n\n# Create the path to the directory where the dataset will be extracted\ndataset_path = Path(f'{dataset_dir}/{dataset_name}')\nprint(f\"Dataset Path: {dataset_path}\")\n\nArchive Path: Datasets/../Archive/style-image-samples.zip\nDataset Path: Datasets/style-image-samples\n\n\n\ndl_kaggle(kaggle_dataset, archive_path, dataset_path)\n\nDownloading style-image-samples.zip to Datasets/../Archive\n\n\n100%|██████████████████████████████████████████████████████████████████████████████████████████████| 16.2M/16.2M [00:00<00:00, 44.0MB/s]\n\n\n\n\n\n\n!ls {dataset_path}\n\nimages"
+  }
+]
